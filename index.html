@@ -4,28 +4,29 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Iberovita | Beverage Distribution in Spain</title>
-  <meta name="description" content="Iberovita is a Spain-focused distribution initiative for health-oriented and differentiated European beverage brands across selected channels." />
+  <meta name="description" content="Iberovita is a Spain-focused distribution partner for health-oriented and differentiated European beverage brands across selected channels." />
   <meta name="keywords" content="beverage distribution Spain, healthy drinks distributor Spain, functional beverage Spain, European beverage brands Spain, vending beverage distribution Spain, beverage market entry Spain" />
   <meta property="og:title" content="Iberovita | Beverage Distribution in Spain" />
-  <meta property="og:description" content="Iberovita is a Spain-focused distribution initiative for health-oriented and differentiated European beverage brands across selected channels." />
+  <meta property="og:description" content="Iberovita is a Spain-focused distribution partner for health-oriented and differentiated European beverage brands across selected channels." />
   <meta property="og:type" content="website" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --navy:    #1B3A52;
-      --green:   #3E7A5E;
-      --green-lt:#EDF4F0;
-      --text:    #1A1A1A;
-      --muted:   #5C5C5C;
-      --border:  #E0E0DC;
-      --bg-off:  #F7F7F5;
-      --white:   #FFFFFF;
-      --max-w:   1120px;
-      --radius:  6px;
+      --navy:     #1B3A52;
+      --navy-lt:  #243F58;
+      --green:    #3E7A5E;
+      --green-lt: #EDF4F0;
+      --text:     #1A1A1A;
+      --muted:    #5C5C5C;
+      --border:   #E0E0DC;
+      --bg-off:   #F7F7F5;
+      --white:    #FFFFFF;
+      --max-w:    1120px;
+      --radius:   6px;
     }
 
     html { scroll-behavior: smooth; }
@@ -44,9 +45,14 @@
       position: fixed;
       top: 0; left: 0; right: 0;
       z-index: 100;
-      background: rgba(255,255,255,0.96);
-      backdrop-filter: blur(8px);
+      background: rgba(255,255,255,0.97);
+      backdrop-filter: blur(10px);
       border-bottom: 1px solid var(--border);
+      transition: box-shadow 0.3s;
+    }
+
+    nav.scrolled {
+      box-shadow: 0 2px 20px rgba(0,0,0,0.06);
     }
 
     .nav-inner {
@@ -74,16 +80,17 @@
     }
 
     .nav-logo-text {
-      font-size: 1.1rem;
+      font-size: 1.05rem;
       font-weight: 600;
       color: var(--navy);
-      letter-spacing: 0.06em;
+      letter-spacing: 0.08em;
     }
 
     .nav-links {
       display: flex;
       gap: 2rem;
       list-style: none;
+      align-items: center;
     }
 
     .nav-links a {
@@ -93,7 +100,24 @@
       text-decoration: none;
       letter-spacing: 0.02em;
       transition: color 0.2s;
+      position: relative;
     }
+
+    .nav-links a.active { color: var(--navy); }
+
+    .nav-links a:not(.nav-cta)::after {
+      content: '';
+      position: absolute;
+      bottom: -4px; left: 0; right: 0;
+      height: 1.5px;
+      background: var(--green);
+      transform: scaleX(0);
+      transition: transform 0.2s;
+      transform-origin: left;
+    }
+
+    .nav-links a:not(.nav-cta):hover::after,
+    .nav-links a.active:not(.nav-cta)::after { transform: scaleX(1); }
 
     .nav-links a:hover { color: var(--navy); }
 
@@ -102,13 +126,17 @@
       font-weight: 500;
       color: var(--white) !important;
       background: var(--navy);
-      padding: 0.5rem 1.25rem;
+      padding: 0.5rem 1.3rem;
       border-radius: var(--radius);
       text-decoration: none;
-      transition: background 0.2s;
+      transition: background 0.2s, transform 0.15s;
     }
 
-    .nav-cta:hover { background: var(--green) !important; color: var(--white) !important; }
+    .nav-cta:hover {
+      background: var(--green) !important;
+      color: var(--white) !important;
+      transform: translateY(-1px);
+    }
 
     .hamburger {
       display: none;
@@ -129,58 +157,84 @@
     }
 
     /* ─── LAYOUT HELPERS ─────────────────────────── */
-    section { padding: 96px 2rem; }
+    section { padding: 100px 2rem; }
     .inner  { max-width: var(--max-w); margin: 0 auto; }
 
     .section-label {
-      font-size: 0.75rem;
+      font-size: 0.72rem;
       font-weight: 600;
-      letter-spacing: 0.12em;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
       color: var(--green);
-      margin-bottom: 1rem;
+      margin-bottom: 0.9rem;
     }
 
     .section-title {
       font-size: clamp(1.75rem, 3vw, 2.4rem);
-      font-weight: 500;
+      font-weight: 400;
       color: var(--navy);
-      line-height: 1.25;
+      line-height: 1.22;
       margin-bottom: 1.5rem;
+      letter-spacing: -0.01em;
     }
 
     .section-body {
       font-size: 1rem;
       color: var(--muted);
       max-width: 680px;
-      line-height: 1.8;
+      line-height: 1.85;
     }
 
-    .section-body + .section-body { margin-top: 1rem; }
+    .section-body + .section-body { margin-top: 1.1rem; }
 
     /* ─── HERO ───────────────────────────────────── */
     #hero {
-      padding-top: 160px;
+      padding-top: 164px;
       padding-bottom: 120px;
       background: var(--white);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Subtle dot pattern */
+    #hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(circle, #d8e8e2 1px, transparent 1px);
+      background-size: 32px 32px;
+      opacity: 0.45;
+      pointer-events: none;
+    }
+
+    /* Soft gradient fade over dots */
+    #hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(255,255,255,0.92) 40%, rgba(237,244,240,0.6) 100%);
+      pointer-events: none;
     }
 
     .hero-inner {
       max-width: var(--max-w);
       margin: 0 auto;
+      position: relative;
+      z-index: 1;
     }
 
     .hero-tag {
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
-      font-size: 0.78rem;
-      font-weight: 500;
-      letter-spacing: 0.1em;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
       color: var(--green);
       background: var(--green-lt);
-      padding: 0.4rem 0.9rem;
+      border: 1px solid rgba(62,122,94,0.2);
+      padding: 0.45rem 1rem;
       border-radius: 100px;
       margin-bottom: 2rem;
     }
@@ -195,76 +249,98 @@
     }
 
     .hero-headline {
-      font-size: clamp(2.2rem, 5vw, 3.6rem);
+      font-size: clamp(2.4rem, 5vw, 3.75rem);
       font-weight: 400;
       color: var(--navy);
-      line-height: 1.18;
-      max-width: 780px;
-      margin-bottom: 1.5rem;
-      letter-spacing: -0.01em;
+      line-height: 1.15;
+      max-width: 800px;
+      margin-bottom: 1.75rem;
+      letter-spacing: -0.02em;
     }
 
     .hero-headline em {
-      font-style: normal;
+      font-style: italic;
       font-family: 'Playfair Display', serif;
       color: var(--green);
     }
 
     .hero-subhead {
-      font-size: 1.1rem;
+      font-size: 1.12rem;
       color: var(--muted);
-      max-width: 580px;
-      line-height: 1.75;
-      margin-bottom: 2.5rem;
+      max-width: 600px;
+      line-height: 1.8;
+      margin-bottom: 2.75rem;
     }
 
     .hero-ctas {
       display: flex;
       gap: 1rem;
       flex-wrap: wrap;
-      margin-bottom: 4rem;
+      margin-bottom: 4.5rem;
     }
 
     .btn-primary {
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
       background: var(--navy);
       color: var(--white);
       font-size: 0.9rem;
       font-weight: 500;
-      padding: 0.85rem 2rem;
+      padding: 0.9rem 2rem;
       border-radius: var(--radius);
       text-decoration: none;
       transition: background 0.2s, transform 0.15s;
       letter-spacing: 0.01em;
     }
 
-    .btn-primary:hover { background: var(--green); transform: translateY(-1px); }
+    .btn-primary:hover { background: var(--green); transform: translateY(-2px); }
 
     .btn-secondary {
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
       color: var(--navy);
       font-size: 0.9rem;
       font-weight: 500;
-      padding: 0.85rem 2rem;
+      padding: 0.9rem 2rem;
       border-radius: var(--radius);
-      border: 1.5px solid var(--border);
+      border: 1.5px solid rgba(27,58,82,0.25);
       text-decoration: none;
-      transition: border-color 0.2s, color 0.2s, transform 0.15s;
+      transition: border-color 0.2s, color 0.2s, transform 0.15s, background 0.2s;
       letter-spacing: 0.01em;
     }
 
     .btn-secondary:hover {
       border-color: var(--navy);
-      color: var(--navy);
-      transform: translateY(-1px);
+      background: rgba(27,58,82,0.04);
+      transform: translateY(-2px);
     }
 
-    .hero-support {
-      font-size: 0.88rem;
-      color: var(--muted);
-      padding-top: 2rem;
+    /* Stats bar below hero CTAs */
+    .hero-stats {
+      display: flex;
+      gap: 3rem;
+      padding-top: 2.5rem;
       border-top: 1px solid var(--border);
-      max-width: 520px;
+      flex-wrap: wrap;
+    }
+
+    .hero-stat-item {}
+
+    .hero-stat-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.2rem;
+    }
+
+    .hero-stat-value {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--navy);
     }
 
     /* ─── DIVIDER ────────────────────────────────── */
@@ -280,9 +356,38 @@
 
     .about-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 5rem;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 6rem;
       align-items: start;
+    }
+
+    .about-left {}
+
+    .about-pull-quote {
+      margin-top: 2.5rem;
+      padding: 1.5rem;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--green);
+      border-radius: 0 var(--radius) var(--radius) 0;
+    }
+
+    .about-pull-quote p {
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.7;
+      font-style: italic;
+    }
+
+    .about-pull-quote cite {
+      display: block;
+      margin-top: 0.75rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--green);
+      font-style: normal;
     }
 
     .about-right p + p { margin-top: 1.25rem; }
@@ -290,35 +395,39 @@
     /* ─── WHAT WE DO ─────────────────────────────── */
     #what-we-do { background: var(--white); }
 
-    .services-header {
-      margin-bottom: 3.5rem;
-    }
+    .services-header { margin-bottom: 3.5rem; }
 
     .services-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 2px;
-      background: var(--border);
-      border: 1px solid var(--border);
-      border-radius: calc(var(--radius) + 2px);
-      overflow: hidden;
+      gap: 1.5rem;
     }
 
     .service-card {
-      background: var(--white);
+      background: var(--bg-off);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
       padding: 2.5rem;
+      border-left: 3px solid transparent;
+      transition: border-left-color 0.25s, box-shadow 0.25s, background 0.25s;
+    }
+
+    .service-card:hover {
+      border-left-color: var(--green);
+      box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+      background: var(--white);
     }
 
     .service-number {
-      font-size: 0.72rem;
+      font-size: 0.7rem;
       font-weight: 600;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.12em;
       color: var(--green);
       margin-bottom: 1.25rem;
     }
 
     .service-title {
-      font-size: 1.15rem;
+      font-size: 1.1rem;
       font-weight: 500;
       color: var(--navy);
       margin-bottom: 0.75rem;
@@ -327,23 +436,23 @@
     .service-text {
       font-size: 0.93rem;
       color: var(--muted);
-      line-height: 1.75;
+      line-height: 1.78;
     }
 
     /* ─── MARKET FOCUS ───────────────────────────── */
     #market-focus { background: var(--navy); }
 
-    #market-focus .section-label { color: rgba(255,255,255,0.5); }
-    #market-focus .section-title { color: var(--white); }
+    #market-focus .section-label { color: rgba(255,255,255,0.45); }
+    #market-focus .section-title { color: var(--white); font-weight: 400; }
 
     .market-inner {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 5rem;
+      gap: 6rem;
       align-items: center;
     }
 
-    .market-text { color: rgba(255,255,255,0.75); font-size: 1rem; line-height: 1.8; }
+    .market-text { color: rgba(255,255,255,0.72); font-size: 1rem; line-height: 1.85; }
     .market-text + .market-text { margin-top: 1.25rem; }
 
     .market-quote {
@@ -354,42 +463,49 @@
 
     .market-quote p {
       font-size: 1.05rem;
-      color: rgba(255,255,255,0.9);
+      color: rgba(255,255,255,0.92);
       line-height: 1.7;
+      font-family: 'Playfair Display', serif;
       font-style: italic;
     }
 
-    .market-stats {
+    .market-principles {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 1.5rem;
+      gap: 1px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: calc(var(--radius) + 2px);
+      overflow: hidden;
     }
 
-    .market-stat-card {
-      background: rgba(255,255,255,0.07);
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: var(--radius);
+    .principle-card {
+      background: rgba(255,255,255,0.05);
       padding: 2rem 1.75rem;
+      transition: background 0.2s;
     }
 
-    .market-stat-card .icon {
-      width: 40px;
-      height: 40px;
-      margin-bottom: 1.25rem;
+    .principle-card:hover { background: rgba(255,255,255,0.09); }
+
+    .principle-card .icon {
+      width: 36px;
+      height: 36px;
+      margin-bottom: 1.1rem;
       color: var(--green);
     }
 
-    .market-stat-card h4 {
-      font-size: 0.95rem;
-      font-weight: 500;
+    .principle-card h4 {
+      font-size: 0.9rem;
+      font-weight: 600;
       color: var(--white);
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.4rem;
+      letter-spacing: 0.01em;
     }
 
-    .market-stat-card p {
-      font-size: 0.85rem;
-      color: rgba(255,255,255,0.55);
-      line-height: 1.6;
+    .principle-card p {
+      font-size: 0.83rem;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.65;
     }
 
     /* ─── CHANNELS ───────────────────────────────── */
@@ -403,7 +519,7 @@
     .channels-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
+      gap: 1.25rem;
     }
 
     .channel-card {
@@ -411,12 +527,14 @@
       border: 1px solid var(--border);
       border-radius: var(--radius);
       padding: 2rem;
-      transition: box-shadow 0.2s, border-color 0.2s;
+      border-top: 3px solid transparent;
+      transition: box-shadow 0.25s, border-top-color 0.25s, transform 0.2s;
     }
 
     .channel-card:hover {
-      box-shadow: 0 4px 24px rgba(0,0,0,0.07);
-      border-color: #c8c8c4;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+      border-top-color: var(--green);
+      transform: translateY(-3px);
     }
 
     .channel-icon {
@@ -434,9 +552,9 @@
     }
 
     .channel-text {
-      font-size: 0.88rem;
+      font-size: 0.87rem;
       color: var(--muted);
-      line-height: 1.7;
+      line-height: 1.72;
     }
 
     /* ─── WHY US ─────────────────────────────────── */
@@ -445,17 +563,17 @@
     .why-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 5rem;
+      gap: 6rem;
       align-items: start;
     }
 
     .why-text p + p { margin-top: 1.25rem; }
 
     .why-bullets {
-      margin-top: 3rem;
+      margin-top: 2.5rem;
       display: flex;
       flex-direction: column;
-      gap: 1rem;
+      gap: 0.85rem;
     }
 
     .why-bullet {
@@ -466,11 +584,11 @@
 
     .bullet-dot {
       flex-shrink: 0;
-      width: 8px;
-      height: 8px;
+      width: 7px;
+      height: 7px;
       border-radius: 50%;
       background: var(--green);
-      margin-top: 0.6rem;
+      margin-top: 0.65rem;
     }
 
     .bullet-label {
@@ -479,24 +597,66 @@
       color: var(--navy);
     }
 
+    /* Navy accent box — inverted for visual punch */
     .why-accent {
-      background: var(--green-lt);
-      border: 1px solid rgba(62,122,94,0.18);
+      background: var(--navy);
       border-radius: var(--radius);
-      padding: 2.5rem;
+      padding: 2.75rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .why-accent::before {
+      content: '';
+      position: absolute;
+      top: -30px; right: -30px;
+      width: 140px; height: 140px;
+      border-radius: 50%;
+      background: rgba(62,122,94,0.15);
+      pointer-events: none;
+    }
+
+    .why-accent-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
+      margin-bottom: 1rem;
     }
 
     .why-accent h3 {
-      font-size: 1.2rem;
-      font-weight: 500;
-      color: var(--navy);
-      margin-bottom: 1rem;
+      font-size: 1.35rem;
+      font-weight: 400;
+      color: var(--white);
+      margin-bottom: 1.25rem;
+      line-height: 1.3;
+      font-family: 'Playfair Display', serif;
     }
 
     .why-accent p {
       font-size: 0.93rem;
-      color: var(--muted);
-      line-height: 1.8;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.85;
+    }
+
+    .why-accent-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 2rem;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--white);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(255,255,255,0.3);
+      padding-bottom: 2px;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    .why-accent-cta:hover {
+      color: #a8d5bd;
+      border-color: #a8d5bd;
     }
 
     /* ─── PARTNERSHIP ────────────────────────────── */
@@ -505,7 +665,7 @@
     .partnership-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 5rem;
+      gap: 6rem;
       align-items: start;
     }
 
@@ -514,7 +674,6 @@
     .partnership-steps {
       display: flex;
       flex-direction: column;
-      gap: 0;
     }
 
     .step {
@@ -534,101 +693,101 @@
       border-radius: 50%;
       background: var(--navy);
       color: var(--white);
-      font-size: 0.78rem;
+      font-size: 0.76rem;
       font-weight: 600;
       display: flex;
       align-items: center;
       justify-content: center;
+      letter-spacing: 0.02em;
     }
 
     .step-content h4 {
       font-size: 0.93rem;
       font-weight: 600;
       color: var(--navy);
-      margin-bottom: 0.35rem;
+      margin-bottom: 0.4rem;
     }
 
     .step-content p {
-      font-size: 0.88rem;
+      font-size: 0.87rem;
       color: var(--muted);
-      line-height: 1.65;
+      line-height: 1.7;
     }
 
     /* ─── CONTACT ────────────────────────────────── */
-    #contact { background: var(--white); }
+    #contact { background: var(--bg-off); }
 
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 5rem;
-      align-items: start;
-    }
-
-    .contact-info { display: flex; flex-direction: column; gap: 2rem; }
-
-    .contact-detail h4 {
-      font-size: 0.78rem;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 0.35rem;
-    }
-
-    .contact-detail p,
-    .contact-detail a {
-      font-size: 0.95rem;
-      color: var(--navy);
-      text-decoration: none;
-    }
-
-    .contact-detail a:hover { color: var(--green); }
-
-    .contact-person {
-      padding: 1.75rem;
+    .contact-wrapper {
+      background: var(--white);
       border: 1px solid var(--border);
-      border-radius: var(--radius);
+      border-radius: calc(var(--radius) + 4px);
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
     }
 
-    .contact-person-name {
-      font-size: 1.05rem;
-      font-weight: 500;
-      color: var(--navy);
-      margin-bottom: 0.2rem;
+    .contact-left {
+      background: var(--navy);
+      padding: 3.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
 
-    .contact-person-title {
-      font-size: 0.85rem;
-      color: var(--muted);
-      margin-bottom: 1.25rem;
-      padding-bottom: 1.25rem;
-      border-bottom: 1px solid var(--border);
+    .contact-left .section-label { color: rgba(255,255,255,0.4); }
+
+    .contact-left-title {
+      font-size: clamp(1.5rem, 2.5vw, 2rem);
+      font-weight: 400;
+      color: var(--white);
+      line-height: 1.25;
+      margin-bottom: 1rem;
+      font-family: 'Playfair Display', serif;
+    }
+
+    .contact-left-body {
+      font-size: 0.93rem;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.8;
+      margin-bottom: 2.5rem;
     }
 
     .contact-links {
       display: flex;
       flex-direction: column;
-      gap: 0.6rem;
+      gap: 1rem;
     }
 
     .contact-link-row {
       display: flex;
       align-items: center;
-      gap: 0.75rem;
-      font-size: 0.88rem;
+      gap: 0.85rem;
     }
 
-    .contact-link-row svg {
+    .contact-link-icon {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
       flex-shrink: 0;
-      color: var(--green);
+      color: rgba(255,255,255,0.7);
     }
 
     .contact-link-row a {
-      color: var(--navy);
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.85);
       text-decoration: none;
+      transition: color 0.2s;
     }
 
-    .contact-link-row a:hover { color: var(--green); }
+    .contact-link-row a:hover { color: #a8d5bd; }
+
+    .contact-right {
+      padding: 3.5rem;
+    }
 
     /* ─── FORM ───────────────────────────────────── */
     .contact-form {
@@ -646,10 +805,11 @@
     }
 
     .form-group label {
-      font-size: 0.8rem;
-      font-weight: 500;
+      font-size: 0.78rem;
+      font-weight: 600;
       color: var(--muted);
-      letter-spacing: 0.03em;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
     }
 
     .form-group input,
@@ -657,22 +817,25 @@
       font-family: inherit;
       font-size: 0.93rem;
       color: var(--text);
-      background: var(--white);
+      background: var(--bg-off);
       border: 1.5px solid var(--border);
       border-radius: var(--radius);
-      padding: 0.75rem 1rem;
+      padding: 0.8rem 1rem;
       outline: none;
-      transition: border-color 0.2s;
+      transition: border-color 0.2s, background 0.2s;
       width: 100%;
     }
 
     .form-group input:focus,
-    .form-group textarea:focus { border-color: var(--navy); }
+    .form-group textarea:focus {
+      border-color: var(--navy);
+      background: var(--white);
+    }
 
     .form-group textarea { resize: vertical; min-height: 130px; }
 
     .form-note {
-      font-size: 0.8rem;
+      font-size: 0.78rem;
       color: var(--muted);
     }
 
@@ -696,50 +859,6 @@
 
     .btn-submit:hover { background: var(--green); transform: translateY(-1px); }
 
-    /* ─── FOOTER ─────────────────────────────────── */
-    footer {
-      background: var(--navy);
-      padding: 3rem 2rem;
-      text-align: center;
-    }
-
-    .footer-inner {
-      max-width: var(--max-w);
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-
-    .footer-logo {
-      font-size: 1rem;
-      font-weight: 600;
-      color: var(--white);
-      letter-spacing: 0.06em;
-    }
-
-    .footer-copy {
-      font-size: 0.8rem;
-      color: rgba(255,255,255,0.4);
-    }
-
-    .footer-links {
-      display: flex;
-      gap: 1.5rem;
-    }
-
-    .footer-links a {
-      font-size: 0.8rem;
-      color: rgba(255,255,255,0.4);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-
-    .footer-links a:hover { color: rgba(255,255,255,0.8); }
-
-    /* ─── SUCCESS MESSAGE ────────────────────────── */
     .form-success {
       display: none;
       background: var(--green-lt);
@@ -751,8 +870,68 @@
       line-height: 1.6;
     }
 
+    /* ─── FOOTER ─────────────────────────────────── */
+    footer {
+      background: var(--navy);
+      padding: 0 2rem;
+    }
+
+    .footer-top {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 3rem 0 2rem;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+
+    .footer-brand {}
+
+    .footer-logo {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--white);
+      letter-spacing: 0.08em;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-tagline {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.4);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 1.75rem;
+      align-items: center;
+    }
+
+    .footer-links a {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.45);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: rgba(255,255,255,0.85); }
+
+    .footer-bottom {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 1.25rem 0;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .footer-copy {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.3);
+    }
+
     /* ─── RESPONSIVE ─────────────────────────────── */
-    @media (max-width: 900px) {
+    @media (max-width: 960px) {
       section { padding: 72px 1.5rem; }
 
       .nav-links { display: none; }
@@ -767,49 +946,51 @@
         border-bottom: 1px solid var(--border);
         padding: 1.5rem 2rem;
         gap: 1.25rem;
+        box-shadow: 0 8px 30px rgba(0,0,0,0.08);
       }
 
-      .nav-links.open .nav-cta {
-        align-self: flex-start;
-      }
+      .nav-links.open .nav-cta { align-self: flex-start; }
 
       .about-grid,
       .market-inner,
       .why-grid,
-      .partnership-grid,
-      .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .partnership-grid { grid-template-columns: 1fr; gap: 3rem; }
 
-      .services-grid { grid-template-columns: 1fr; }
+      .services-grid  { grid-template-columns: 1fr; }
+      .channels-grid  { grid-template-columns: 1fr 1fr; }
+      .market-principles { grid-template-columns: 1fr 1fr; }
 
-      .channels-grid { grid-template-columns: 1fr 1fr; }
-
-      .market-stats { grid-template-columns: 1fr 1fr; }
+      .contact-wrapper { grid-template-columns: 1fr; }
+      .contact-left    { padding: 2.5rem; }
+      .contact-right   { padding: 2.5rem; }
 
       .form-row { grid-template-columns: 1fr; }
 
-      .footer-inner { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
+      .footer-top { flex-direction: column; gap: 1.5rem; }
     }
 
     @media (max-width: 600px) {
-      .channels-grid { grid-template-columns: 1fr; }
-      .market-stats   { grid-template-columns: 1fr; }
-      .hero-ctas      { flex-direction: column; }
-      .btn-primary, .btn-secondary { text-align: center; }
+      .channels-grid     { grid-template-columns: 1fr; }
+      .market-principles { grid-template-columns: 1fr; }
+      .hero-ctas         { flex-direction: column; }
+      .hero-stats        { gap: 1.75rem; }
+      .btn-primary, .btn-secondary { justify-content: center; }
+    }
+
+    @media (max-width: 768px) {
+      .hero-headline { font-size: clamp(2rem, 7vw, 2.6rem); }
     }
   </style>
 </head>
 <body>
 
 <!-- ─── NAVIGATION ─────────────────────────── -->
-<nav>
+<nav id="mainNav">
   <div class="nav-inner">
     <a href="#hero" class="nav-logo">
       <svg class="nav-logo-img" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <!-- bottle body -->
         <path d="M22 8h-4v3.5c0 0-5 2.5-5 9.5v9a2 2 0 002 2h10a2 2 0 002-2v-9c0-7-5-9.5-5-9.5V8z" stroke="#3E7A5E" stroke-width="1.6" stroke-linejoin="round" fill="none"/>
-        <!-- bottle neck -->
         <rect x="18" y="5" width="4" height="3.5" rx="1" stroke="#3E7A5E" stroke-width="1.6" fill="none"/>
-        <!-- leaf -->
         <path d="M17 18c-3-1-5.5 1-5 4.5 2.5 0 5.5-1 6.5-4" stroke="#3E7A5E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="#EDF4F0"/>
         <path d="M12.5 22.5c1-2 3-3 4.5-3" stroke="#3E7A5E" stroke-width="1" stroke-linecap="round"/>
       </svg>
@@ -833,18 +1014,36 @@
   <div class="hero-inner">
     <span class="hero-tag">Spain-focused distribution</span>
     <h1 class="hero-headline">
-      Distribution for <em>health-oriented</em><br>beverage brands in Spain
+      We help European brands build a<br><em>real commercial presence</em> in Spain
     </h1>
     <p class="hero-subhead">
-      Iberovita is a distribution initiative focused on introducing differentiated European beverage brands into selected channels in the Spanish market.
+      Iberovita is a distribution partner focused on introducing differentiated, health-oriented beverage brands into selected channels across the Spanish market — with a long-term approach.
     </p>
     <div class="hero-ctas">
-      <a href="#contact" class="btn-primary">Get in touch</a>
+      <a href="#contact" class="btn-primary">
+        Get in touch
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"/></svg>
+      </a>
       <a href="#what-we-do" class="btn-secondary">Explore our approach</a>
     </div>
-    <p class="hero-support">
-      Focused on functional, convenient and better-for-you beverage concepts with strong potential in Spain.
-    </p>
+    <div class="hero-stats">
+      <div class="hero-stat-item">
+        <p class="hero-stat-label">Market</p>
+        <p class="hero-stat-value">Spain-only focus</p>
+      </div>
+      <div class="hero-stat-item">
+        <p class="hero-stat-label">Category</p>
+        <p class="hero-stat-value">Functional &amp; health beverages</p>
+      </div>
+      <div class="hero-stat-item">
+        <p class="hero-stat-label">Model</p>
+        <p class="hero-stat-value">Long-term partnerships</p>
+      </div>
+      <div class="hero-stat-item">
+        <p class="hero-stat-label">Approach</p>
+        <p class="hero-stat-value">Channel-first, selective</p>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -856,17 +1055,18 @@
     <div class="about-grid">
       <div class="about-left">
         <p class="section-label">About</p>
-        <h2 class="section-title">About Iberovita</h2>
+        <h2 class="section-title">A focused entry point into the Spanish market</h2>
+        <div class="about-pull-quote">
+          <p>"Consumer appetite for functional, health-oriented beverages is growing — yet many of the most interesting European brands remain absent from Spanish shelves."</p>
+          <cite>The opportunity Iberovita is built around</cite>
+        </div>
       </div>
       <div class="about-right">
         <p class="section-body">
-          Iberovita is a Spain-focused beverage distribution initiative currently in its launch phase. It is being developed with the objective of identifying and introducing differentiated, health-oriented European beverage brands into selected channels across the Spanish market.
+          Iberovita is a beverage distribution company in its launch phase, built to introduce differentiated, health-oriented European brands into selected channels across the Spanish market.
         </p>
         <p class="section-body">
-          The project is built around a clear commercial rationale: consumer demand for functional, convenient and better-positioned beverage options continues to grow, while many high-potential European brands remain underrepresented in Spain.
-        </p>
-        <p class="section-body">
-          Iberovita's approach is selective and long-term oriented, with a focus on building strong brand relationships and developing sustainable routes to market rather than pursuing purely transactional sales.
+          Our approach is selective and long-term oriented — focused on building genuine brand relationships and sustainable routes to market, not transactional volume.
         </p>
       </div>
     </div>
@@ -884,22 +1084,22 @@
       <div class="service-card">
         <p class="service-number">01</p>
         <h3 class="service-title">Brand introduction</h3>
-        <p class="service-text">We support beverage brands looking for a focused and committed entry into the Spanish market.</p>
+        <p class="service-text">We support European beverage brands entering Spain — handling channel introductions with a focused, committed approach from day one.</p>
       </div>
       <div class="service-card">
         <p class="service-number">02</p>
         <h3 class="service-title">Channel-oriented distribution</h3>
-        <p class="service-text">We concentrate on selected channels where health-oriented and convenient beverage products can gain traction efficiently.</p>
+        <p class="service-text">We concentrate on specific channels — vending, fitness, workplace, convenience — where health-oriented products can gain traction efficiently.</p>
       </div>
       <div class="service-card">
         <p class="service-number">03</p>
         <h3 class="service-title">Market development</h3>
-        <p class="service-text">Our objective is not only to place products, but to help build brand presence through a structured commercial approach.</p>
+        <p class="service-text">We help build brand presence through structured commercial planning and ongoing market feedback — not just product placement.</p>
       </div>
       <div class="service-card">
         <p class="service-number">04</p>
         <h3 class="service-title">Long-term partnerships</h3>
-        <p class="service-text">We aim to establish solid relationships with brands whose products and positioning can create sustainable value in Spain.</p>
+        <p class="service-text">We select brands we genuinely believe in and commit to developing them in Spain over time — not for one-off import volumes.</p>
       </div>
     </div>
   </div>
@@ -913,45 +1113,45 @@
         <p class="section-label">Market</p>
         <h2 class="section-title">Market Focus</h2>
         <p class="market-text">
-          Iberovita focuses on beverage concepts that combine quality, convenience and clear consumer positioning. The interest is in products that respond to the growing demand for better-for-you alternatives, including functional and health-oriented categories with potential for repeat consumption and broad market relevance.
+          We focus on beverage concepts that combine quality, convenience and clear consumer positioning — products that respond to the growing demand for better-for-you alternatives with genuine potential for repeat consumption in Spain.
         </p>
         <p class="market-text">
-          The initial focus is on brands with strong product fundamentals, attractive positioning and realistic potential for channel-based market entry in Spain.
+          The category potential is real. What matters is the right product, the right channel and the right commercial logic.
         </p>
         <div class="market-quote">
-          <p>Quality product selection and disciplined market entry are at the core of our approach.</p>
+          <p>Quality product selection and disciplined market entry are at the core of everything we do.</p>
         </div>
       </div>
       <div class="market-right">
-        <div class="market-stats">
-          <div class="market-stat-card">
-            <svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3 1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5" />
+        <div class="market-principles">
+          <div class="principle-card">
+            <svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.4">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941" />
             </svg>
             <h4>Growing category</h4>
-            <p>Functional and health-oriented beverages represent one of the fastest-growing segments in European FMCG.</p>
+            <p>Functional and health beverages are among the fastest-growing FMCG segments in Europe — and Spain is catching up.</p>
           </div>
-          <div class="market-stat-card">
-            <svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+          <div class="principle-card">
+            <svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.4">
               <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
               <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
             </svg>
-            <h4>Spain-focused</h4>
-            <p>A dedicated Spain-only focus allows for deeper channel knowledge and more effective market entry execution.</p>
+            <h4>Spain only</h4>
+            <p>A single-market focus means deeper channel relationships, better execution and more meaningful feedback from the field.</p>
           </div>
-          <div class="market-stat-card">
-            <svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+          <div class="principle-card">
+            <svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.4">
               <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
             <h4>Selective criteria</h4>
-            <p>Not every product is a fit. We work with brands where there is genuine product-market alignment in Spain.</p>
+            <p>Not every product is a fit. We work with brands where there is genuine product-market alignment — not just availability.</p>
           </div>
-          <div class="market-stat-card">
-            <svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 00-6.364-6.364l-4.5 4.5a4.5 4.5 0 001.242 7.244" />
+          <div class="principle-card">
+            <svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.4">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
-            <h4>Long-term logic</h4>
-            <p>Market presence is built over time. Our commercial model is designed for sustainable development, not short-term volume.</p>
+            <h4>Built for the long term</h4>
+            <p>Market presence is built over time. Our model prioritises sustainable development over short-term volume.</p>
           </div>
         </div>
       </div>
@@ -966,49 +1166,49 @@
     <h2 class="section-title">Selected Channels</h2>
     <div class="channels-intro">
       <p class="section-body">
-        Our initial route-to-market focus is based on channels where differentiated beverage products can be introduced with commercial discipline and measurable feedback from the market.
+        Our route-to-market strategy is built around channels where differentiated beverage products can be introduced with commercial discipline and generate meaningful, measurable results.
       </p>
     </div>
     <div class="channels-grid">
 
       <div class="channel-card">
-        <svg class="channel-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+        <svg class="channel-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.4">
           <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z" />
         </svg>
         <h3 class="channel-title">Vending</h3>
-        <p class="channel-text">High-traffic consumption environments with increasing demand for better beverage options.</p>
+        <p class="channel-text">High-traffic consumption environments with growing consumer demand for premium, better-for-you beverage alternatives.</p>
       </div>
 
       <div class="channel-card">
-        <svg class="channel-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+        <svg class="channel-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.4">
           <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 21v-7.5a.75.75 0 01.75-.75h3a.75.75 0 01.75.75V21m-4.5 0H2.36m11.14 0H18m0 0h3.64m-1.39 0V9.349m-16.5 11.65V9.35m0 0a3.001 3.001 0 003.75-.615A2.993 2.993 0 009.75 9.75c.896 0 1.7-.393 2.25-1.016a2.993 2.993 0 002.25 1.016c.896 0 1.7-.393 2.25-1.016a3.001 3.001 0 003.75.614m-16.5 0a3.004 3.004 0 01-.621-4.72L4.318 3.44A1.5 1.5 0 015.378 3h13.243a1.5 1.5 0 011.06.44l1.19 1.189a3 3 0 01-.621 4.72m-13.5 8.65h3.75a.75.75 0 00.75-.75V13.5a.75.75 0 00-.75-.75H6.75a.75.75 0 00-.75.75v3.75c0 .415.336.75.75.75z" />
         </svg>
         <h3 class="channel-title">Convenience</h3>
-        <p class="channel-text">Channels where impulse, accessibility and product positioning are especially important.</p>
+        <p class="channel-text">Fast-moving retail environments where product visibility, impulse appeal and clear positioning drive purchase decisions.</p>
       </div>
 
       <div class="channel-card">
-        <svg class="channel-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+        <svg class="channel-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.4">
           <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
         </svg>
         <h3 class="channel-title">Gyms &amp; fitness</h3>
-        <p class="channel-text">Relevant for health-oriented products with clear functional appeal and a receptive consumer base.</p>
+        <p class="channel-text">A highly receptive channel for functional and health-oriented products, with consumers already aligned to the category.</p>
       </div>
 
       <div class="channel-card">
-        <svg class="channel-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+        <svg class="channel-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.4">
           <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 21h16.5M4.5 3h15M5.25 3v18m13.5-18v18M9 6.75h1.5m-1.5 3h1.5m-1.5 3h1.5m3-6H15m-1.5 3H15m-1.5 3H15M9 21v-3.375c0-.621.504-1.125 1.125-1.125h3.75c.621 0 1.125.504 1.125 1.125V21" />
         </svg>
         <h3 class="channel-title">Offices &amp; workplace</h3>
-        <p class="channel-text">An attractive setting for convenient, single-serve products aimed at everyday consumption.</p>
+        <p class="channel-text">A consistent, recurring consumption setting well-suited to convenient, single-serve products with everyday appeal.</p>
       </div>
 
       <div class="channel-card">
-        <svg class="channel-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+        <svg class="channel-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.4">
           <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
         </svg>
         <h3 class="channel-title">Selected retail</h3>
-        <p class="channel-text">Targeted retail environments where product differentiation can support a gradual market rollout.</p>
+        <p class="channel-text">Targeted retail environments where product quality and differentiation are valued — supporting a structured, gradual rollout.</p>
       </div>
 
     </div>
@@ -1023,10 +1223,7 @@
         <p class="section-label">Our value</p>
         <h2 class="section-title">Why Work With Iberovita</h2>
         <p class="section-body">
-          Iberovita is being developed with a clear focus on Spain and a practical understanding of how market entry needs to be structured in early-stage distribution. The objective is to work with brands that are looking for more than a transactional importer — brands that value focused execution, channel selection and long-term commercial development.
-        </p>
-        <p class="section-body" style="margin-top:1.25rem;">
-          Rather than approaching the market with a broad but diluted model, Iberovita's philosophy is to build carefully, validate product-market fit in the right channels and scale based on commercial performance.
+          Our single-market focus on Spain means deeper channel knowledge, stronger operator relationships and a clearer understanding of where products can genuinely succeed — built carefully, scaled based on real commercial performance.
         </p>
         <div class="why-bullets">
           <div class="why-bullet">
@@ -1035,7 +1232,7 @@
           </div>
           <div class="why-bullet">
             <span class="bullet-dot"></span>
-            <span class="bullet-label">Selective channel entry</span>
+            <span class="bullet-label">Selective, channel-first entry strategy</span>
           </div>
           <div class="why-bullet">
             <span class="bullet-dot"></span>
@@ -1043,15 +1240,20 @@
           </div>
           <div class="why-bullet">
             <span class="bullet-dot"></span>
-            <span class="bullet-label">Focus on differentiated beverage products</span>
+            <span class="bullet-label">Category expertise in functional &amp; health beverages</span>
           </div>
         </div>
       </div>
       <div class="why-accent">
-        <h3>Built for the long term</h3>
+        <p class="why-accent-label">Our philosophy</p>
+        <h3>Not a shortcut importer. A committed local partner.</h3>
         <p>
-          We believe that sustainable distribution relationships require aligned expectations, clear commercial logic and a shared understanding of what market development looks like in practice. Iberovita is being built with those principles from the outset — not as a shortcut importer, but as a committed local partner for brands that take Spain seriously.
+          Sustainable distribution requires aligned expectations, clear commercial logic and a shared understanding of what market development actually looks like in practice. Iberovita is built with those principles from day one — for brands that take Spain seriously and want a partner that does too.
         </p>
+        <a href="#contact" class="why-accent-cta">
+          Start a conversation
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"/></svg>
+        </a>
       </div>
     </div>
   </div>
@@ -1065,13 +1267,10 @@
         <p class="section-label">How we work</p>
         <h2 class="section-title">Partnership Approach</h2>
         <p class="section-body">
-          We are interested in working with European beverage brands that see Spain as a relevant growth market and value a committed local distribution partner with a disciplined go-to-market approach.
+          We work with European beverage brands that see Spain as a relevant growth market and want a committed local partner — not just a distributor. Our model starts with the right product and channel combinations, generates real market feedback and expands with structure.
         </p>
-        <p class="section-body" style="margin-top:1.25rem;">
-          Our preferred model is based on selective brand partnerships, clear commercial alignment and a step-by-step market development logic. This means starting with the right product and channel combinations, generating market feedback and expanding with structure.
-        </p>
-        <p class="section-body" style="margin-top:1.25rem;">
-          Iberovita is particularly interested in brands that combine strong product quality with clear positioning and are looking to build sustainable presence in Spain over time.
+        <p class="section-body" style="margin-top:1.1rem;">
+          We are particularly interested in brands with strong product quality and clear positioning, ready to build a sustainable presence in Spain over time.
         </p>
       </div>
       <div class="partnership-steps">
@@ -1093,14 +1292,14 @@
           <span class="step-num">3</span>
           <div class="step-content">
             <h4>Market entry &amp; validation</h4>
-            <p>We introduce the product into selected channels and generate structured feedback from the market.</p>
+            <p>We introduce the product into selected channels and gather real sell-through data and structured market feedback.</p>
           </div>
         </div>
         <div class="step">
           <span class="step-num">4</span>
           <div class="step-content">
             <h4>Structured development</h4>
-            <p>Based on performance, we expand channel coverage and build brand presence with a long-term commercial logic.</p>
+            <p>Based on commercial performance, we expand channel coverage and build brand presence with a long-term logic.</p>
           </div>
         </div>
       </div>
@@ -1111,35 +1310,35 @@
 <!-- ─── CONTACT ─────────────────────────────── -->
 <section id="contact">
   <div class="inner">
-    <div class="contact-grid">
-      <div>
-        <p class="section-label">Contact</p>
-        <h2 class="section-title">Get in Touch</h2>
-        <p class="section-body" style="margin-bottom:2.5rem;">
-          For partnership opportunities, commercial enquiries or brand discussions, feel free to get in touch.
-        </p>
-        <div class="contact-info">
-          <div class="contact-person">
-            <p class="contact-person-name">Iberovita</p>
-            <p class="contact-person-title">Commercial &amp; Partnership Enquiries</p>
-            <div class="contact-links">
-              <div class="contact-link-row">
-                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
-                </svg>
-                <a href="mailto:info@iberovita.com">info@iberovita.com</a>
-              </div>
-              <div class="contact-link-row">
-                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
-                </svg>
-                <a href="tel:+34698851323">+34 698 851 323</a>
-              </div>
+    <div class="contact-wrapper">
+      <div class="contact-left">
+        <div>
+          <p class="section-label">Contact</p>
+          <h2 class="contact-left-title">Start a conversation</h2>
+          <p class="contact-left-body">
+            For partnership opportunities, commercial enquiries or brand discussions, we are always open to hearing from brands and operators with a genuine interest in the Spanish market.
+          </p>
+        </div>
+        <div class="contact-links">
+          <div class="contact-link-row">
+            <div class="contact-link-icon">
+              <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+              </svg>
             </div>
+            <a href="mailto:info@iberovita.com">info@iberovita.com</a>
+          </div>
+          <div class="contact-link-row">
+            <div class="contact-link-icon">
+              <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
+              </svg>
+            </div>
+            <a href="tel:+34698851323">+34 698 851 323</a>
           </div>
         </div>
       </div>
-      <div>
+      <div class="contact-right">
         <form class="contact-form" id="contactForm" novalidate>
           <div class="form-row">
             <div class="form-group">
@@ -1177,29 +1376,53 @@
 
 <!-- ─── FOOTER ──────────────────────────────── -->
 <footer>
-  <div class="footer-inner">
-    <span class="footer-logo">IBEROVITA</span>
-    <span class="footer-copy">&copy; 2026 Iberovita. All rights reserved.</span>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <span class="footer-logo">IBEROVITA</span>
+      <span class="footer-tagline">Beverage distribution — Spain</span>
+    </div>
     <div class="footer-links">
       <a href="#about">About</a>
+      <a href="#what-we-do">What We Do</a>
       <a href="#channels">Channels</a>
       <a href="#contact">Contact</a>
     </div>
   </div>
+  <div class="footer-bottom">
+    <span class="footer-copy">&copy; 2026 Iberovita. All rights reserved.</span>
+  </div>
 </footer>
 
 <script>
+  // Nav scroll shadow
+  const mainNav = document.getElementById('mainNav');
+  window.addEventListener('scroll', () => {
+    mainNav.classList.toggle('scrolled', window.scrollY > 10);
+  }, { passive: true });
+
   // Mobile nav toggle
   const hamburger = document.getElementById('hamburger');
   const navLinks  = document.getElementById('navLinks');
-  hamburger.addEventListener('click', () => {
-    navLinks.classList.toggle('open');
-  });
-
-  // Close mobile nav on link click
+  hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
   navLinks.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => navLinks.classList.remove('open'));
   });
+
+  // Active nav link on scroll
+  const sections = document.querySelectorAll('section[id]');
+  const navAs    = document.querySelectorAll('.nav-links a:not(.nav-cta)');
+
+  function onScroll() {
+    let current = '';
+    sections.forEach(sec => {
+      if (window.scrollY >= sec.offsetTop - 90) current = sec.id;
+    });
+    navAs.forEach(a => {
+      a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+    });
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
 
   // Formspree contact form
   document.getElementById('contactForm').addEventListener('submit', async function(e) {
@@ -1231,22 +1454,6 @@
       alert('Connection error. Please try again or email us directly at info@iberovita.com');
     }
   });
-
-  // Highlight active nav section on scroll
-  const sections = document.querySelectorAll('section[id]');
-  const navAs    = document.querySelectorAll('.nav-links a:not(.nav-cta)');
-
-  function onScroll() {
-    let current = '';
-    sections.forEach(sec => {
-      if (window.scrollY >= sec.offsetTop - 100) current = sec.id;
-    });
-    navAs.forEach(a => {
-      a.style.color = a.getAttribute('href') === '#' + current ? 'var(--navy)' : '';
-    });
-  }
-
-  window.addEventListener('scroll', onScroll, { passive: true });
 </script>
 </body>
 </html>
