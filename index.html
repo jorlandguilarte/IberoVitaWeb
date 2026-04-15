@@ -9,6 +9,8 @@
   <meta property="og:title" content="Iberovita | Beverage Distribution in Spain" />
   <meta property="og:description" content="Iberovita is a Spain-focused distribution partner for health-oriented and differentiated European beverage brands across selected channels." />
   <meta property="og:type" content="website" />
+  <link rel="alternate" hreflang="en" href="https://www.iberovita.com/" />
+  <link rel="alternate" hreflang="es" href="https://www.iberovita.com/es/" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
@@ -23,7 +25,7 @@
       --text:     #1A1A1A;
       --muted:    #5C5C5C;
       --border:   #E0E0DC;
-      --bg-off:   #F7F7F5;
+      --bg-off:   #F8F6F1;
       --white:    #FFFFFF;
       --max-w:    1120px;
       --radius:   6px;
@@ -137,6 +139,23 @@
       color: var(--white) !important;
       transform: translateY(-1px);
     }
+
+    .lang-toggle {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.76rem;
+      font-weight: 600;
+      letter-spacing: 0.07em;
+      padding-left: 1.25rem;
+      border-left: 1px solid var(--border);
+      margin-left: 0.25rem;
+    }
+
+    .lang-active { color: var(--navy); }
+    .lang-sep    { color: var(--border); }
+    .lang-link   { color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    .lang-link:hover { color: var(--navy); }
 
     .hamburger {
       display: none;
@@ -1018,6 +1037,11 @@
       <li><a href="#partnership">Partnership</a></li>
       <li><a href="#contact" class="nav-cta">Get in Touch</a></li>
     </ul>
+    <div class="lang-toggle">
+      <span class="lang-active">EN</span>
+      <span class="lang-sep">/</span>
+      <a href="/es/" class="lang-link">ES</a>
+    </div>
     <button class="hamburger" id="hamburger" aria-label="Toggle menu">
       <span></span><span></span><span></span>
     </button>
