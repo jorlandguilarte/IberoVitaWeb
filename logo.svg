@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 72" fill="none">
+  <defs>
+    <linearGradient id="leafGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#5AA67E"/>
+      <stop offset="100%" stop-color="#2E6347"/>
+    </linearGradient>
+    <linearGradient id="bottleGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#254D6B"/>
+      <stop offset="100%" stop-color="#1B3A52"/>
+    </linearGradient>
+  </defs>
+
+  <!-- ── ICON MARK (60×60, centred at 36,36) ── -->
+
+  <!-- Leaf — organic teardrop, tilted slightly -->
+  <path d="M 28 14
+           C 14 18 10 36 17 48
+           C 20 54 27 53 31 47
+           C 37 37 34 17 28 14 Z"
+        fill="url(#leafGrad)"/>
+  <!-- Leaf midrib -->
+  <path d="M 28 14 C 24 28 19 40 17 48"
+        stroke="rgba(255,255,255,0.28)" stroke-width="1" stroke-linecap="round"/>
+
+  <!-- Bottle body -->
+  <path d="M 30 24
+           L 30 30
+           Q 24 33 23 39
+           L 23 56
+           Q 23 59 36 59
+           Q 49 59 49 56
+           L 49 39
+           Q 48 33 42 30
+           L 42 24 Z"
+        fill="url(#bottleGrad)"/>
+
+  <!-- Bottle neck -->
+  <rect x="31" y="16" width="10" height="10" rx="2" fill="url(#bottleGrad)"/>
+
+  <!-- Bottle cap — green accent -->
+  <rect x="30" y="11" width="12" height="7" rx="2" fill="#3E7A5E"/>
+
+  <!-- Subtle bottle highlight -->
+  <path d="M 27 39 Q 27 33 30 30"
+        stroke="rgba(255,255,255,0.12)" stroke-width="1.5" stroke-linecap="round"/>
+
+  <!-- ── WORDMARK ── -->
+  <text x="74" y="43"
+        font-family="'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif"
+        font-size="22"
+        font-weight="600"
+        letter-spacing="4"
+        fill="#1B3A52">IBEROVITA</text>
+
+  <!-- ── TAGLINE ── -->
+  <text x="75" y="57"
+        font-family="'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif"
+        font-size="9"
+        font-weight="400"
+        letter-spacing="2.5"
+        fill="#3E7A5E">BEVERAGE DISTRIBUTION · SPAIN</text>
+</svg>
