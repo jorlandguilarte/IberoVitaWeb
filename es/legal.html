@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aviso Legal | Iberovita</title>
+  <meta name="robots" content="noindex, follow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy: #1B3A52; --green: #3E7A5E; --green-lt: #EDF4F0;
+      --text: #1A1A1A; --muted: #5C5C5C; --border: #E0E0DC;
+      --bg-off: #F8F6F1; --white: #FFFFFF; --max-w: 780px; --radius: 6px;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--white); font-size: 16px; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(255,255,255,0.97); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border); }
+    .nav-inner { max-width: 1120px; margin: 0 auto; padding: 0 2rem; height: 64px; display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo { display: flex; align-items: center; gap: 0.65rem; text-decoration: none; }
+    .nav-logo-img { width: 38px; height: 38px; display: block; }
+    .nav-logo-text { font-size: 1.05rem; font-weight: 600; color: var(--navy); letter-spacing: 0.08em; }
+    .nav-back { font-size: 0.85rem; font-weight: 500; color: var(--muted); text-decoration: none; display: flex; align-items: center; gap: 0.4rem; transition: color 0.2s; }
+    .nav-back:hover { color: var(--navy); }
+
+    .legal-header { padding: 140px 2rem 60px; background: var(--bg-off); border-bottom: 1px solid var(--border); }
+    .legal-header-inner { max-width: var(--max-w); margin: 0 auto; }
+    .legal-label { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--green); margin-bottom: 0.9rem; }
+    .legal-title { font-size: clamp(1.75rem, 3vw, 2.4rem); font-weight: 400; color: var(--navy); margin-bottom: 0.75rem; }
+    .legal-meta  { font-size: 0.85rem; color: var(--muted); }
+
+    .legal-content { padding: 64px 2rem 100px; }
+    .legal-content-inner { max-width: var(--max-w); margin: 0 auto; }
+
+    .legal-section { margin-bottom: 3rem; }
+    .legal-section h2 { font-size: 1.1rem; font-weight: 600; color: var(--navy); margin-bottom: 0.75rem; padding-bottom: 0.75rem; border-bottom: 1px solid var(--border); }
+    .legal-section p { font-size: 0.95rem; color: var(--muted); line-height: 1.85; margin-bottom: 0.9rem; }
+    .legal-section p:last-child { margin-bottom: 0; }
+    .legal-section ul { margin: 0.75rem 0 0.9rem 1.25rem; }
+    .legal-section ul li { font-size: 0.95rem; color: var(--muted); line-height: 1.75; margin-bottom: 0.35rem; }
+    .legal-section a { color: var(--green); text-decoration: none; }
+    .legal-section a:hover { text-decoration: underline; }
+    .legal-highlight { background: var(--green-lt); border-left: 3px solid var(--green); padding: 1rem 1.25rem; border-radius: 0 var(--radius) var(--radius) 0; margin-bottom: 1rem; font-size: 0.93rem; color: var(--muted); line-height: 1.75; }
+
+    footer { background: var(--navy); padding: 0 2rem; }
+    .footer-top { max-width: 1120px; margin: 0 auto; padding: 2.5rem 0 1.5rem; display: flex; align-items: flex-start; justify-content: space-between; flex-wrap: wrap; gap: 1.5rem; }
+    .footer-logo    { font-size: 1rem; font-weight: 600; color: var(--white); letter-spacing: 0.08em; display: block; margin-bottom: 0.4rem; }
+    .footer-tagline { font-size: 0.8rem; color: rgba(255,255,255,0.4); }
+    .footer-links { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+    .footer-links a { font-size: 0.82rem; color: rgba(255,255,255,0.45); text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: rgba(255,255,255,0.85); }
+    .footer-bottom { max-width: 1120px; margin: 0 auto; padding: 1.25rem 0; border-top: 1px solid rgba(255,255,255,0.08); }
+    .footer-copy { font-size: 0.78rem; color: rgba(255,255,255,0.3); }
+
+    @media (max-width: 600px) { .legal-header { padding-top: 110px; } }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/es/" class="nav-logo">
+      <svg class="nav-logo-img" viewBox="0 0 60 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="l1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#5AA67E"/><stop offset="100%" stop-color="#2E6347"/></linearGradient>
+          <linearGradient id="l2" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#254D6B"/><stop offset="100%" stop-color="#1B3A52"/></linearGradient>
+        </defs>
+        <path d="M 28 14 C 14 18 10 36 17 48 C 20 54 27 53 31 47 C 37 37 34 17 28 14 Z" fill="url(#l1)"/>
+        <path d="M 28 14 C 24 28 19 40 17 48" stroke="rgba(255,255,255,0.28)" stroke-width="1" stroke-linecap="round"/>
+        <path d="M 30 24 L 30 30 Q 24 33 23 39 L 23 56 Q 23 59 36 59 Q 49 59 49 56 L 49 39 Q 48 33 42 30 L 42 24 Z" fill="url(#l2)"/>
+        <rect x="31" y="16" width="10" height="10" rx="2" fill="url(#l2)"/>
+        <rect x="30" y="11" width="12" height="7" rx="2" fill="#3E7A5E"/>
+      </svg>
+      <span class="nav-logo-text">IBEROVITA</span>
+    </a>
+    <a href="/es/" class="nav-back">
+      <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 12h-15m0 0l6.75 6.75M4.5 12l6.75-6.75"/></svg>
+      Volver al sitio web
+    </a>
+  </div>
+</nav>
+
+<div class="legal-header">
+  <div class="legal-header-inner">
+    <p class="legal-label">Legal</p>
+    <h1 class="legal-title">Aviso Legal</h1>
+    <p class="legal-meta">Última actualización: abril de 2026 &nbsp;·&nbsp; <a href="/legal.html" style="color:var(--green);">English version</a></p>
+  </div>
+</div>
+
+<div class="legal-content">
+  <div class="legal-content-inner">
+
+    <div class="legal-section">
+      <div class="legal-highlight">
+        El presente Aviso Legal regula el uso del sitio web <strong>www.iberovita.com</strong> de conformidad con la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y de Comercio Electrónico (LSSI-CE) y demás normativa aplicable.
+      </div>
+    </div>
+
+    <div class="legal-section">
+      <h2>1. Datos Identificativos</h2>
+      <p>En cumplimiento del artículo 10 de la LSSI-CE, se facilitan los siguientes datos:</p>
+      <p><strong>Denominación:</strong> Iberovita<br>
+      <strong>Actividad:</strong> Distribución de bebidas<br>
+      <strong>País de actividad:</strong> España<br>
+      <strong>Correo electrónico:</strong> <a href="mailto:info@iberovita.com">info@iberovita.com</a><br>
+      <strong>Teléfono:</strong> +34 698 851 323</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>2. Objeto del Sitio Web</h2>
+      <p>Este sitio web es una plataforma de información corporativa dirigida a un público profesional (B2B), que incluye potenciales socios de marca, distribuidores y operadores comerciales.</p>
+      <p>El sitio web no constituye una oferta de venta al público general y no realiza transacciones de comercio electrónico.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>3. Propiedad Intelectual e Industrial</h2>
+      <p>Todos los contenidos publicados en este sitio web — incluidos, entre otros, textos, gráficos, logotipos, iconos, imágenes y diseño — son propiedad de Iberovita o de sus licenciantes, y están protegidos por la legislación aplicable en materia de propiedad intelectual e industrial.</p>
+      <p>Queda expresamente prohibida la reproducción, distribución, comunicación pública o transformación de cualquier contenido de este sitio web, total o parcialmente, sin el consentimiento previo y por escrito de Iberovita.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>4. Exclusión de Responsabilidad</h2>
+      <p>Iberovita pone todo su empeño en garantizar la exactitud y actualidad de la información publicada en este sitio web. No obstante, no se ofrece garantía alguna sobre su exactitud, integridad o idoneidad para ningún fin concreto.</p>
+      <p>Iberovita no será responsable de los daños o perjuicios derivados del uso o de la imposibilidad de uso de los contenidos de este sitio web, ni del acceso a sitios web de terceros vinculados desde el mismo.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>5. Enlaces Externos</h2>
+      <p>Este sitio web puede contener enlaces a sitios web de terceros. Dichos enlaces se proporcionan únicamente a efectos informativos. Iberovita no tiene control sobre el contenido de esos sitios y no asume responsabilidad alguna por los mismos ni por los daños o perjuicios que puedan derivarse de su uso.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>6. Ley Aplicable y Jurisdicción</h2>
+      <p>El presente Aviso Legal se rige por la legislación española. Para cualquier controversia derivada del acceso o uso de este sitio web, las partes se someten a la jurisdicción de los juzgados y tribunales de España, con renuncia expresa a cualquier otro fuero que pudiera corresponderles.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>7. Contacto</h2>
+      <p>Para cualquier consulta legal relacionada con este sitio web, puede contactarnos en:<br>
+      <a href="mailto:info@iberovita.com">info@iberovita.com</a></p>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <div class="footer-top">
+    <div>
+      <span class="footer-logo">IBEROVITA</span>
+      <span class="footer-tagline">Distribución de bebidas — España</span>
+    </div>
+    <div class="footer-links">
+      <a href="/es/">Inicio</a>
+      <a href="/es/legal.html">Aviso Legal</a>
+      <a href="/es/privacy.html">Política de Privacidad</a>
+      <a href="/legal.html">Legal Notice</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-copy">&copy; 2026 Iberovita. Todos los derechos reservados.</span>
+  </div>
+</footer>
+
+</body>
+</html>
