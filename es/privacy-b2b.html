@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Política de Privacidad | Iberovita</title>
+  <title>Política de Privacidad B2B | Iberovita</title>
   <meta name="robots" content="noindex, follow" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -45,6 +45,11 @@
     .legal-section a:hover { text-decoration: underline; }
     .legal-highlight { background: var(--green-lt); border-left: 3px solid var(--green); padding: 1rem 1.25rem; border-radius: 0 var(--radius) var(--radius) 0; margin-bottom: 1rem; font-size: 0.93rem; color: var(--muted); line-height: 1.75; }
 
+    .legal-table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.9rem; }
+    .legal-table th { background: var(--bg-off); color: var(--navy); font-weight: 600; text-align: left; padding: 0.65rem 0.85rem; border: 1px solid var(--border); font-size: 0.82rem; letter-spacing: 0.03em; }
+    .legal-table td { padding: 0.65rem 0.85rem; border: 1px solid var(--border); color: var(--muted); vertical-align: top; line-height: 1.6; }
+    .legal-table tr:nth-child(even) td { background: #FAFAF8; }
+
     footer { background: var(--navy); padding: 0 2rem; }
     .footer-top { max-width: 1120px; margin: 0 auto; padding: 2.5rem 0 1.5rem; display: flex; align-items: flex-start; justify-content: space-between; flex-wrap: wrap; gap: 1.5rem; }
     .footer-logo    { font-size: 1rem; font-weight: 600; color: var(--white); letter-spacing: 0.08em; display: block; margin-bottom: 0.4rem; }
@@ -55,7 +60,10 @@
     .footer-bottom { max-width: 1120px; margin: 0 auto; padding: 1.25rem 0; border-top: 1px solid rgba(255,255,255,0.08); }
     .footer-copy { font-size: 0.78rem; color: rgba(255,255,255,0.3); }
 
-    @media (max-width: 600px) { .legal-header { padding-top: 110px; } }
+    @media (max-width: 600px) {
+      .legal-header { padding-top: 110px; }
+      .legal-table { display: block; overflow-x: auto; }
+    }
   </style>
 </head>
 <body>
@@ -85,9 +93,9 @@
 
 <div class="legal-header">
   <div class="legal-header-inner">
-    <p class="legal-label">Legal</p>
-    <h1 class="legal-title">Política de Privacidad</h1>
-    <p class="legal-meta">Última actualización: abril de 2026 &nbsp;·&nbsp; <a href="/privacy.html" style="color:var(--green);">English version</a></p>
+    <p class="legal-label">Legal · B2B</p>
+    <h1 class="legal-title">Política de Privacidad — Clientes B2B</h1>
+    <p class="legal-meta">Última actualización: 16 de julio de 2026 &nbsp;·&nbsp; <a href="/es/privacy.html" style="color:var(--green);">Política general del sitio web</a></p>
   </div>
 </div>
 
@@ -96,89 +104,105 @@
 
     <div class="legal-section">
       <div class="legal-highlight">
-        Iberovita se compromete a proteger sus datos personales. Esta Política de Privacidad explica qué información recogemos, cómo la utilizamos y qué derechos le asisten en virtud del Reglamento General de Protección de Datos (RGPD) y la Ley Orgánica 3/2018 de Protección de Datos Personales y garantía de los derechos digitales (LOPDGDD).
+        Esta política regula el tratamiento de datos personales en el contexto del sistema de pedidos B2B de Iberovita, incluyendo el canal de WhatsApp y la web. Está dirigida exclusivamente a profesionales que gestionan pedidos en nombre de una empresa.
       </div>
     </div>
 
     <div class="legal-section">
-      <h2>1. Responsable del Tratamiento</h2>
-      <p>El responsable del tratamiento de sus datos personales es:</p>
-      <p><strong>Iberovita Nexum, S.L.</strong> (nombre comercial: Iberovita)<br>
-      CIF: B88956065<br>
-      Domicilio: C/ Impresores, 20 · P.E. Prado del Espino · Boadilla del Monte · 28660 · Madrid<br>
-      Correo electrónico: <a href="mailto:info@iberovita.com">info@iberovita.com</a><br>
-      Teléfono: +34 698 851 323</p>
+      <h2>1. Responsable del tratamiento</h2>
+      <p>
+        <strong>Razón social:</strong> Iberovita Nexum, S.L.<br>
+        <strong>CIF:</strong> B88956065<br>
+        <strong>Domicilio social:</strong> Calle Impresores, 20. P.E. Prado del Espino. 28660 Boadilla del Monte, Madrid.<br>
+        <strong>Email de contacto:</strong> <a href="mailto:info@iberovita.com">info@iberovita.com</a>
+      </p>
     </div>
 
     <div class="legal-section">
-      <h2>2. Datos que Recogemos</h2>
-      <p>Únicamente recogemos los datos personales que usted nos facilita voluntariamente a través del formulario de contacto de este sitio web. Estos datos incluyen:</p>
+      <h2>2. Qué datos tratamos y de dónde proceden</h2>
+      <p>Tratamos los datos que nos facilitas directamente al gestionar un pedido a través de nuestro bot de WhatsApp o de nuestra web:</p>
       <ul>
-        <li>Nombre y apellidos</li>
-        <li>Nombre de la empresa (opcional)</li>
-        <li>Dirección de correo electrónico</li>
-        <li>Contenido del mensaje</li>
+        <li>Nombre y datos de contacto de la persona que realiza el pedido (teléfono, email).</li>
+        <li>Datos de tu empresa: CIF, razón social, dirección de entrega.</li>
+        <li>Contenido de la conversación necesaria para tramitar el pedido.</li>
       </ul>
-      <p>No recogemos datos personales de categorías especiales. No utilizamos cookies de seguimiento ni tecnologías publicitarias.</p>
+      <p>No tratamos categorías especiales de datos (salud, ideología, origen étnico, etc.), y no recogemos datos de menores de edad — este servicio está dirigido exclusivamente a profesionales que gestionan pedidos en nombre de una empresa.</p>
     </div>
 
     <div class="legal-section">
-      <h2>3. Finalidad y Base Jurídica</h2>
-      <p>Tratamos sus datos personales para las siguientes finalidades:</p>
+      <h2>3. Finalidad del tratamiento</h2>
       <ul>
-        <li><strong>Atender su consulta</strong> — base jurídica: interés legítimo (art. 6.1.f RGPD) y medidas precontractuales (art. 6.1.b RGPD).</li>
-        <li><strong>Comunicaciones comerciales</strong> — únicamente cuando usted haya iniciado el contacto con fines comerciales; base jurídica: interés legítimo.</li>
+        <li>Gestionar y tramitar tus pedidos B2B: identificación de tu empresa, selección de producto, aplicación de tarifas por volumen, emisión de PDF/albarán.</li>
+        <li>Mantener el histórico de la relación comercial y atender consultas o incidencias relacionadas con tus pedidos.</li>
       </ul>
-      <p>Nunca enviaremos correos comerciales no solicitados ni compartiremos sus datos con fines publicitarios.</p>
+      <p>No utilizamos este canal para enviarte comunicaciones comerciales no solicitadas. Si en el futuro ofrecemos promociones u ofertas por WhatsApp o email, te pediremos tu consentimiento expreso de forma separada, conforme al art. 21 de la Ley 34/2002 (LSSI).</p>
     </div>
 
     <div class="legal-section">
-      <h2>4. Terceros Encargados del Tratamiento</h2>
-      <p>Utilizamos los siguientes servicios de terceros que pueden tratar sus datos en nuestro nombre:</p>
+      <h2>4. Base jurídica</h2>
+      <p>El tratamiento se basa en el <strong>art. 6.1.b) RGPD</strong>: es necesario para la ejecución de la relación contractual o precontractual entre tu empresa e Iberovita Nexum, S.L. (gestión de tu pedido). No requiere tu consentimiento expreso porque deriva de esa relación comercial.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>5. Destinatarios y encargados del tratamiento</h2>
+      <p>No cedemos tus datos a terceros ajenos a la prestación del servicio. Utilizamos los siguientes proveedores como <strong>encargados del tratamiento</strong> (art. 28 RGPD), que solo tratan tus datos siguiendo nuestras instrucciones:</p>
+      <table class="legal-table">
+        <thead>
+          <tr>
+            <th>Proveedor</th>
+            <th>Función</th>
+            <th>Garantía de transferencia internacional</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Twilio Inc.</strong></td>
+            <td>Canal de mensajería WhatsApp</td>
+            <td>Autocertificado en el Marco de Privacidad de Datos UE-EE. UU. (EU-US DPF)</td>
+          </tr>
+          <tr>
+            <td><strong>Render Services Inc.</strong></td>
+            <td>Alojamiento técnico de la aplicación</td>
+            <td>Autocertificado en el Marco de Privacidad de Datos UE-EE. UU. (EU-US DPF)</td>
+          </tr>
+          <tr>
+            <td><strong>Notion Labs Inc.</strong></td>
+            <td>Almacenamiento y respaldo de pedidos y conversaciones</td>
+            <td>Cláusulas contractuales tipo (SCC) aprobadas por la Comisión Europea</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>Los tres mecanismos están reconocidos como garantías válidas para la transferencia internacional de datos conforme a los arts. 45–46 RGPD.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>6. Plazo de conservación</h2>
       <ul>
-        <li><strong>Formspree Inc.</strong> — gestiona el envío del formulario de contacto. Los datos se transmiten de forma segura y están sujetos a la <a href="https://formspree.io/legal/privacy-policy" target="_blank" rel="noopener">Política de Privacidad de Formspree</a>.</li>
-        <li><strong>Google LLC</strong> — Google Fonts se carga desde los servidores de Google, que pueden registrar su dirección IP. No se comparten datos del formulario con Google.</li>
-        <li><strong>GitHub Inc.</strong> — este sitio web está alojado en GitHub Pages. GitHub puede tratar datos técnicos de acceso (dirección IP, tipo de navegador). Consulte la <a href="https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement" target="_blank" rel="noopener">Declaración de Privacidad de GitHub</a>.</li>
+        <li>Los datos vinculados a operaciones de venta se conservan durante el plazo de conservación mercantil: <strong>6 años</strong> (art. 30 Código de Comercio).</li>
+        <li>Las conversaciones de WhatsApp sin valor contable o probatorio se eliminan una vez resuelto el pedido, salvo que exista una reclamación o incidencia abierta que justifique conservarlas más tiempo.</li>
       </ul>
-      <p>Todos los encargados del tratamiento están ubicados en el Espacio Económico Europeo o operan bajo mecanismos de transferencia aprobados por la UE.</p>
     </div>
 
     <div class="legal-section">
-      <h2>5. Conservación de los Datos</h2>
-      <p>Conservamos los datos de las consultas recibidas durante el tiempo necesario para atender su solicitud y mantener la relación comercial resultante, o durante un máximo de tres (3) años desde la fecha del último contacto, lo que ocurra antes.</p>
-      <p>Transcurrido dicho plazo, los datos serán eliminados de forma segura, salvo que una obligación legal exija un período de conservación mayor.</p>
+      <h2>7. Tus derechos</h2>
+      <p>Puedes ejercer en cualquier momento tus derechos de <strong>acceso, rectificación, supresión, oposición, limitación del tratamiento y portabilidad</strong>, escribiendo a <a href="mailto:info@iberovita.com">info@iberovita.com</a>. Responderemos en el plazo máximo de un mes (art. 12.3 RGPD).</p>
+      <p>Si consideras que el tratamiento de tus datos no se ajusta a la normativa, puedes presentar una reclamación ante la <strong>Agencia Española de Protección de Datos</strong>:<br>
+      <a href="https://www.aepd.es" target="_blank" rel="noopener">www.aepd.es</a></p>
     </div>
 
     <div class="legal-section">
-      <h2>6. Sus Derechos</h2>
-      <p>En virtud del RGPD y la normativa española de protección de datos, usted tiene los siguientes derechos sobre sus datos personales:</p>
-      <ul>
-        <li><strong>Derecho de acceso</strong> — solicitar una copia de los datos que conservamos sobre usted.</li>
-        <li><strong>Derecho de rectificación</strong> — solicitar la corrección de datos inexactos o incompletos.</li>
-        <li><strong>Derecho de supresión</strong> — solicitar la eliminación de sus datos cuando no exista motivo legítimo para seguir tratándolos.</li>
-        <li><strong>Derecho de limitación</strong> — solicitar que restrinjamos el uso de sus datos.</li>
-        <li><strong>Derecho a la portabilidad</strong> — recibir sus datos en un formato estructurado y de uso común.</li>
-        <li><strong>Derecho de oposición</strong> — oponerse al tratamiento basado en interés legítimo.</li>
-      </ul>
-      <p>Para ejercer cualquiera de estos derechos, contáctenos en <a href="mailto:info@iberovita.com">info@iberovita.com</a>. Responderemos en el plazo de un mes.</p>
+      <h2>8. Decisiones automatizadas</h2>
+      <p>No se toman decisiones automatizadas con efectos jurídicos o significativos sobre ti a partir de tus datos. El bot de WhatsApp aplica reglas de tarifas predefinidas para gestionar tu pedido; no realiza perfilado ni decisiones que te afecten legalmente.</p>
     </div>
 
     <div class="legal-section">
-      <h2>7. Derecho a Presentar una Reclamación</h2>
-      <p>Si considera que sus derechos en materia de protección de datos han sido vulnerados, tiene derecho a presentar una reclamación ante la autoridad de control competente:</p>
-      <p><strong>Agencia Española de Protección de Datos (AEPD)</strong><br>
-      Sitio web: <a href="https://www.aepd.es" target="_blank" rel="noopener">www.aepd.es</a></p>
+      <h2>9. Seguridad</h2>
+      <p>Aplicamos medidas técnicas y organizativas razonables para proteger tus datos, incluido el cifrado en tránsito y en reposo ofrecido por los proveedores indicados en el apartado 5.</p>
     </div>
 
     <div class="legal-section">
-      <h2>8. Modificaciones de esta Política</h2>
-      <p>Podemos actualizar esta Política de Privacidad en cualquier momento. Cualquier cambio se publicará en esta página con la fecha de actualización correspondiente. Le recomendamos que la revise periódicamente.</p>
-    </div>
-
-    <div class="legal-section">
-      <h2>9. Contacto</h2>
-      <p>Para cualquier consulta o solicitud relacionada con esta Política de Privacidad o con sus datos personales, puede contactarnos en:<br>
-      <a href="mailto:info@iberovita.com">info@iberovita.com</a></p>
+      <h2>10. Cambios en esta política</h2>
+      <p>Podemos actualizar esta política para reflejar cambios legales u operativos. La fecha de la última actualización figura al inicio del documento.</p>
     </div>
 
   </div>
@@ -195,11 +219,10 @@
       <a href="/es/legal.html">Aviso Legal</a>
       <a href="/es/privacy.html">Política de Privacidad</a>
       <a href="/es/privacy-b2b.html">Privacidad B2B</a>
-      <a href="/privacy.html">Privacy Policy</a>
     </div>
   </div>
   <div class="footer-bottom">
-    <span class="footer-copy">&copy; 2026 Iberovita. Todos los derechos reservados.</span>
+    <span class="footer-copy">&copy; 2026 Iberovita Nexum, S.L. Todos los derechos reservados.</span>
   </div>
 </footer>
 
