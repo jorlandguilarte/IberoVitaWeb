@@ -186,6 +186,18 @@
 
     .btn-secondary:hover { border-color: var(--navy); background: rgba(27,58,82,0.04); transform: translateY(-2px); }
 
+    .nav-whatsapp { background: var(--green); }
+    .nav-whatsapp:hover { background: var(--navy) !important; }
+
+    .btn-whatsapp {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: var(--green); color: var(--white); font-size: 0.9rem; font-weight: 500;
+      padding: 0.9rem 2rem; border-radius: var(--radius); text-decoration: none;
+      transition: background 0.2s, transform 0.15s; letter-spacing: 0.01em;
+    }
+
+    .btn-whatsapp:hover { background: #2E6347; transform: translateY(-2px); }
+
     .hero-stats { display: flex; gap: 3rem; padding-top: 2.5rem; border-top: 1px solid var(--border); flex-wrap: wrap; }
     .hero-stat-label { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.2rem; }
     .hero-stat-value { font-size: 0.95rem; font-weight: 500; color: var(--navy); }
@@ -445,7 +457,7 @@
       .channels-grid, .market-principles { grid-template-columns: 1fr; }
       .hero-ctas  { flex-direction: column; }
       .hero-stats { gap: 1.75rem; }
-      .btn-primary, .btn-secondary { justify-content: center; }
+      .btn-primary, .btn-secondary, .btn-whatsapp { justify-content: center; }
     }
 
     @media (max-width: 768px) {
@@ -484,6 +496,7 @@
       <li><a href="#channels">Canales</a></li>
       <li><a href="#partnership">Colaboración</a></li>
       <li><a href="#contact" class="nav-cta">Contactar</a></li>
+      <li><a href="https://wa.me/34711206286?text=Hola%2C%20quiero%20hacer%20un%20pedido" class="nav-cta nav-whatsapp" target="_blank" rel="noopener">Pedidos por WhatsApp</a></li>
     </ul>
     <div class="lang-toggle">
       <a href="/" class="lang-link">EN</a>
@@ -512,6 +525,7 @@
         <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"/></svg>
       </a>
       <a href="#what-we-do" class="btn-secondary">Conoce nuestro enfoque</a>
+      <a href="https://wa.me/34711206286?text=Hola%2C%20quiero%20hacer%20un%20pedido" class="btn-whatsapp" target="_blank" rel="noopener">Pedidos por WhatsApp</a>
     </div>
     <div class="hero-stats">
       <div class="hero-stat-item">

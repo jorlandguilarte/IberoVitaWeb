@@ -330,6 +330,26 @@
       letter-spacing: 0.01em;
     }
 
+    .nav-whatsapp { background: var(--green); }
+    .nav-whatsapp:hover { background: var(--navy) !important; }
+
+    .btn-whatsapp {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--green);
+      color: var(--white);
+      font-size: 0.9rem;
+      font-weight: 500;
+      padding: 0.9rem 2rem;
+      border-radius: var(--radius);
+      text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
+      letter-spacing: 0.01em;
+    }
+
+    .btn-whatsapp:hover { background: #2E6347; transform: translateY(-2px); }
+
     .btn-secondary:hover {
       border-color: var(--navy);
       background: rgba(27,58,82,0.04);
@@ -994,7 +1014,7 @@
       .market-principles { grid-template-columns: 1fr; }
       .hero-ctas         { flex-direction: column; }
       .hero-stats        { gap: 1.75rem; }
-      .btn-primary, .btn-secondary { justify-content: center; }
+      .btn-primary, .btn-secondary, .btn-whatsapp { justify-content: center; }
     }
 
     @media (max-width: 768px) {
@@ -1037,6 +1057,7 @@
       <li><a href="#channels">Channels</a></li>
       <li><a href="#partnership">Partnership</a></li>
       <li><a href="#contact" class="nav-cta">Get in Touch</a></li>
+      <li><a href="https://wa.me/34711206286?text=Hi%2C%20I%27d%20like%20to%20place%20an%20order" class="nav-cta nav-whatsapp" target="_blank" rel="noopener">Order via WhatsApp</a></li>
     </ul>
     <div class="lang-toggle">
       <span class="lang-active">EN</span>
@@ -1065,6 +1086,7 @@
         <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"/></svg>
       </a>
       <a href="#what-we-do" class="btn-secondary">Explore our approach</a>
+      <a href="https://wa.me/34711206286?text=Hi%2C%20I%27d%20like%20to%20place%20an%20order" class="btn-whatsapp" target="_blank" rel="noopener">Order via WhatsApp</a>
     </div>
     <div class="hero-stats">
       <div class="hero-stat-item">
